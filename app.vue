@@ -5,13 +5,15 @@
 	</div>
 </template>
 
-<script>
+<script setup>
 import bridge from "@vkontakte/vk-bridge"
 
-console.log("Перед VKWebAppInit")
+onMounted(() => {
+  console.log("onMounted")
 
-// Отправляет событие инициализации нативному клиенту
-bridge.send("VKWebAppInit")
+  // Отправляет событие инициализации нативному клиенту
+  bridge.send("VKWebAppInit")
+})
 </script>
 
 <style></style>
